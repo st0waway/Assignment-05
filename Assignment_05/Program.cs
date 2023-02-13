@@ -1,4 +1,5 @@
 ﻿using Assignment_05.ExtraOne;
+using Assignment_05.ExtraThree;
 using Assignment_05.ExtraTwo;
 
 namespace Assignment_05
@@ -9,7 +10,8 @@ namespace Assignment_05
 		{
 			//Animals();
 			//ClassRoom();
-			Vehicles();
+			//Vehicles();
+			Documents();
 		}
 
 		public static void Animals()
@@ -57,6 +59,27 @@ namespace Assignment_05
 			Console.WriteLine($"type: {car.GetType()}, price: {car.Price}, top speed:{car.TopSpeed}, year manufactured:{car.YearManufactured}");
 			Console.WriteLine($"type: {plane.GetType()}, price: {plane.Price}, top speed:{plane.TopSpeed}, year manufactured:{plane.YearManufactured}, max height: {plane.MaxHeight}, max passengers: {plane.MaxPassengers}");
 			Console.WriteLine($"type: {ship.GetType()}, price: {ship.Price}, top speed:{ship.TopSpeed}, year manufactured:{ship.YearManufactured}, max passengers: {ship.MaxPassengers}, dock: {ship.Dock}" );
+		}
+
+		public static void Documents()
+		{
+			var standart = new DocumentWorker();
+			Console.WriteLine("standart");
+			standart.OpenDocument();
+			standart.EditDocument();
+			standart.SaveDocument();
+
+			var pro = new ProDocumentWorker("prokey");
+			Console.WriteLine("pro");
+			pro.OpenDocument();
+			pro.EditDocument();
+			pro.SaveDocument();
+
+			var expert = new ExpertDocumentWorker("expertkay");
+			Console.WriteLine("expert");
+			expert.OpenDocument();
+			expert.EditDocument();
+			expert.SaveDocument();
 		}
 	}
 }

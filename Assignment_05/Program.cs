@@ -6,6 +6,12 @@ namespace Assignment_05
 	{
 		static void Main(string[] args)
 		{
+			Animals();
+			ClassRoom();
+		}
+
+		public static void Animals()
+		{
 			var bigCat = new BigCat(200, 100, "2.3.2009", "roar");
 			var tiger = new Tiger(140, 80, "4.3.2015", "tiger roar", "long stripes");
 			var lion = new Lion(160, 90, "4.6.2017", "lion roar", 100);
@@ -22,25 +28,24 @@ namespace Assignment_05
 			{
 				cat.Bite();
 			}
+		}
 
+		public static void ClassRoom()
+		{
 			var classRoom = new ClassRoom(new Pupil(), new ExcellentPupil(), new GoodPupil(), new BadPupil());
+			var classRoomTwo = new ClassRoom(new Pupil(), new BadPupil());
+			var classRoomThree = new ClassRoom(new Pupil(), new ExcellentPupil(), new GoodPupil());
 
-			classRoom.PupilOne.Read();
-			classRoom.PupilOne.Relax();
-			classRoom.PupilOne.Study();
-			classRoom.PupilOne.Write();
-			classRoom.PupilTwo.Read();
-			classRoom.PupilTwo.Relax();
-			classRoom.PupilTwo.Study();
-			classRoom.PupilTwo.Write();
-			classRoom.PupilThree.Read();
-			classRoom.PupilThree.Relax();
-			classRoom.PupilThree.Study();
-			classRoom.PupilThree.Write();
-			classRoom.PupilFour.Read();
-			classRoom.PupilFour.Relax();
-			classRoom.PupilFour.Study();
-			classRoom.PupilFour.Write();
+			var students = new Pupil[4] { new Pupil(), new ExcellentPupil(), new GoodPupil(), new BadPupil() };
+			foreach (var student in students)
+			{
+				student.Read();
+				student.Relax();
+				student.Study();
+				student.Write();
+			}
+
+
 		}
 	}
 }

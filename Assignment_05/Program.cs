@@ -1,4 +1,6 @@
-﻿namespace Assignment_05
+﻿using Assignment_05.ExtraOne;
+
+namespace Assignment_05
 {
 	internal class Program
 	{
@@ -20,6 +22,25 @@
 			{
 				cat.Bite();
 			}
+
+			var classRoom = new ClassRoom(new Pupil(), new ExcellentPupil(), new GoodPupil(), new BadPupil());
+
+			classRoom.PupilOne.Read();
+			classRoom.PupilOne.Relax();
+			classRoom.PupilOne.Study();
+			classRoom.PupilOne.Write();
+			classRoom.PupilTwo.Read();
+			classRoom.PupilTwo.Relax();
+			classRoom.PupilTwo.Study();
+			classRoom.PupilTwo.Write();
+			classRoom.PupilThree.Read();
+			classRoom.PupilThree.Relax();
+			classRoom.PupilThree.Study();
+			classRoom.PupilThree.Write();
+			classRoom.PupilFour.Read();
+			classRoom.PupilFour.Relax();
+			classRoom.PupilFour.Study();
+			classRoom.PupilFour.Write();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Assignment_05.ExtraOne;
+using Assignment_05.ExtraTwo;
 
 namespace Assignment_05
 {
@@ -6,8 +7,9 @@ namespace Assignment_05
 	{
 		static void Main(string[] args)
 		{
-			Animals();
-			ClassRoom();
+			//Animals();
+			//ClassRoom();
+			Vehicles();
 		}
 
 		public static void Animals()
@@ -36,7 +38,7 @@ namespace Assignment_05
 			var classRoomTwo = new ClassRoom(new Pupil(), new BadPupil());
 			var classRoomThree = new ClassRoom(new Pupil(), new ExcellentPupil(), new GoodPupil());
 
-			var students = new Pupil[4] { new Pupil(), new ExcellentPupil(), new GoodPupil(), new BadPupil() };
+			var students = new Pupil[4] { new(), new ExcellentPupil(), new GoodPupil(), new BadPupil() };
 			foreach (var student in students)
 			{
 				student.Read();
@@ -44,8 +46,17 @@ namespace Assignment_05
 				student.Study();
 				student.Write();
 			}
+		}
 
+		public static void Vehicles()
+		{
+			var car = new Car(30000, 240, 2018);
+			var plane = new Plane(100000, 700, 1998, 700, 4);
+			var ship = new Ship(500000, 200, 1980, 10, "sunny beach");
 
+			Console.WriteLine($"type: {car.GetType()}, price: {car.Price}, top speed:{car.TopSpeed}, year manufactured:{car.YearManufactured}");
+			Console.WriteLine($"type: {plane.GetType()}, price: {plane.Price}, top speed:{plane.TopSpeed}, year manufactured:{plane.YearManufactured}, max height: {plane.MaxHeight}, max passengers: {plane.MaxPassengers}");
+			Console.WriteLine($"type: {ship.GetType()}, price: {ship.Price}, top speed:{ship.TopSpeed}, year manufactured:{ship.YearManufactured}, max passengers: {ship.MaxPassengers}, dock: {ship.Dock}" );
 		}
 	}
 }
